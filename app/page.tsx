@@ -1,12 +1,27 @@
 import Menu from "./menu";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
 	return (
 		<main className="flex" style={{ backgroundColor: "#F3F3F3" }}>
-			<div className="mx-3 w-full">
-				<h1>Brews</h1>
+			<div className="mx-5 w-full">
+				<h1 className="text-3xl mt-5">Brews</h1>
+				<div className="brews-add" style={{ position: "absolute", top: "30px", right: "20px" }}>
+					<Dialog>
+						<DialogTrigger>Add</DialogTrigger>
+						<DialogContent>
+							<DialogHeader>
+								<DialogTitle>Are you sure absolutely sure?</DialogTitle>
+								<DialogDescription>
+									This action cannot be undone. This will permanently delete your account and remove your data from our
+									servers.
+								</DialogDescription>
+							</DialogHeader>
+						</DialogContent>
+					</Dialog>
+				</div>
 				<div className="brews">
 					<Card className="my-3">
 						<CardHeader>
